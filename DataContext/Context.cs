@@ -1,11 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using TodoApp.Models;
+using ToDoApp.Models;
 
-namespace TodoApp.Data
+namespace ToDoApp.Data
 {
     public class Context : DbContext
     {
-        public DbSet<Todo> Todos { get; set; }
+        public DbSet<Todo>? Todos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) =>
             options.UseSqlite("DataSource=app.db;Cache=Shared");
