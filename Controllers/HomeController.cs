@@ -9,29 +9,33 @@ namespace ToDoApp.Controllers
     {
         [HttpGet]
         [Route("/listtodos/")]
-        public IEnumerable<Todo> Get([FromServices] Context context)
-        => context.Todos.ToList();
+        public IActionResult Get([FromServices] Context context)
+        => Ok(context.Todos.ToList());
 
         [HttpGet]
         [Route("/listtodo/{id:int}")]
-        public Todo GetById([FromRoute] int id, [FromServices] Context context)
-        => context.Todos.FirstOrDefault(x => x.Id == id);
+        public IActionResult GetById([FromRoute] int id, [FromServices] Context context)
+        {
+            var todo = context.Todos.FirstOrDefault(x => x.Id == id);
+            if (todo is null) return NotFound();
+            return Ok(todo);
+        }
 
         [HttpPost]
         [Route("/savetodo/")]
-        public Todo Post([FromBody] Todo todo, [FromServices] Context context)
+        public IActionResult Post([FromBody] Todo todo, [FromServices] Context context)
         {
             context.Todos.Add(todo);
             context.SaveChanges();
-            return todo;
+            return Created($"/savetodo/{todo.Id}", todo);
         }
 
         [HttpPut]
         [Route("/updattodo/{id:int}")]
-        public string Put([FromRoute] int id, [FromBody] Todo todo, [FromServices] Context context)
+        public IActionResult Put([FromRoute] int id, [FromBody] Todo todo, [FromServices] Context context)
         {
             var oldTodo = context.Todos.FirstOrDefault(x => x.Id == id);
-            if (oldTodo is null) return "Todo not found";
+            if (oldTodo is null) return NotFound("Todo not found");
 
             oldTodo.Name = todo.Name;
             oldTodo.Done = todo.Done;
@@ -39,18 +43,18 @@ namespace ToDoApp.Controllers
 
             context.Todos.Update(oldTodo);
             context.SaveChanges();
-            return "The todo has been updated successufuly";
+            return Ok("The todo has been updated successufuly");
         }
 
         [HttpDelete]
         [Route("/deletetodo/{id:int}")]
-        public string Delete([FromRoute] int id, [FromServices] Context context)
+        public IActionResult Delete([FromRoute] int id, [FromServices] Context context)
         {
             var todo = context.Todos.FirstOrDefault(x => x.Id == id);
-            if (todo is null) return "Todo not found";
+            if (todo is null) return NotFound("Todo not found");
             context.Todos.Remove(todo);
             context.SaveChanges();
-            return "Todo deleted successufuly";
+            return Ok("Todo deleted successufuly");
         }
     }
 }
