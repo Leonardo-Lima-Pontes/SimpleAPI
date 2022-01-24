@@ -1,11 +1,7 @@
+C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.exe
+C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.dll
 C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\appsettings.Development.json
 C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\appsettings.json
-C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.exe
-C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.deps.json
-C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.runtimeconfig.json
-C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.dll
-C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ref\ToDoApp.dll
-C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.pdb
 C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\Humanizer.dll
 C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
 C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -45,4 +41,8 @@ C:\dev\FundamentosAsp\ToDoApp\obj\Debug\net6.0\ToDoApp.csproj.CopyComplete
 C:\dev\FundamentosAsp\ToDoApp\obj\Debug\net6.0\ToDoApp.dll
 C:\dev\FundamentosAsp\ToDoApp\obj\Debug\net6.0\ref\ToDoApp.dll
 C:\dev\FundamentosAsp\ToDoApp\obj\Debug\net6.0\ToDoApp.pdb
+C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.deps.json
+C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.runtimeconfig.json
+C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ref\ToDoApp.dll
+C:\dev\FundamentosAsp\ToDoApp\bin\Debug\net6.0\ToDoApp.pdb
 C:\dev\FundamentosAsp\ToDoApp\obj\Debug\net6.0\ToDoApp.genruntimeconfig.cache

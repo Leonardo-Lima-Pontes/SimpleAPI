@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using ToDoApp.Data;
+using ToDoApp.Models;
 
 namespace ToDoApp.Controllers
 {
@@ -6,10 +8,17 @@ namespace ToDoApp.Controllers
     public class HomeController : ControllerBase
     {
         [HttpGet]
-        [Route("/home/{name}")]
-        public string Get(string name)
+        [Route("/listastodos/")]
+        public IEnumerable<Todo> Get([FromServices] Context context)
+        => context.Todos.ToList();
+
+        [HttpPost]
+        [Route("/gravartodo/")]
+        public Todo Post([FromBody] Todo todo, [FromServices] Context context)
         {
-            return "Welcome Home";
+            context.Todos.Add(todo);
+            context.SaveChanges();
+            return todo;
         }
     }
 }
